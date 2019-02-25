@@ -1,0 +1,23 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "运行环境Node.js\r 首先连接Tushuguan的WIFI，然后进入cmd输入\r ```\r git clone https://github.com/xcy96/login.git && cd login\r ```\r 编辑文件loginLab.js,填写自己的用户名密码，保存之后输入\r ```\r node loginLab\r ```\r 启动脚本，有成功字样表示登录成功",
+  "main": "loginLab.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcy96/login.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xcy96/login/issues"
+  },
+  "homepage": "https://github.com/xcy96/login#readme",
+  "dependencies": {
+    "iconv-lite": "^0.4.24"
+  }
+}

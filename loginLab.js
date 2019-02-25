@@ -22,7 +22,7 @@ const options = {
 		'Referer': 'http://172.24.39.253/portal/logon.htm',
 		'Accept-Encoding': 'gzip, deflate',
 		'Accept-Language': 'zh-CN,zh;q=0.9',
-		'Cookie': 'LPTSRVID=25406020510'
+		// 'Cookie': 'LPTSRVID=25406020510'
 	}
 
 }
@@ -58,6 +58,7 @@ function loginLab() {
 			res.on('end', () => {
 				if (data.indexOf('Logoff') != -1) {
 					console.log("图书馆验证界面登陆成功");
+					console.log(data);
 					resolve(1);
 				} else {
 					console.log('登录失败');
