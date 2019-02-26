@@ -1,8 +1,20 @@
 const http = require('http');
 const https = require('https');
 // const querystring = require('querystring');
-const usrname = '';
-const pwd = '';
+
+//获取命令行usrname和pwd
+let up=process.argv.slice(2);
+let tU='';
+let tP='';
+up.forEach(item=>{
+	if(item.indexOf('\-u')!=-1){
+		tU=item.split(/\-u[\s]*/)[1];
+	}
+	if(item.indexOf('\-p')!=-1)
+		tP=item.split(/\-p[\s]*/)[1];
+});
+const usrname = tU||'';//可以手动设置用户名密码
+const pwd = tP||'';
 const postData = 'PtUser=' + usrname + '&PtPwd=' + pwd + '&PtButton=%B5%C7%C2%BC';
 const options = {
 	port: 80,
@@ -47,6 +59,7 @@ const options2 = {
 		'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'
 	}
 }
+
 function loginLab() {
 	return new Promise((resolve, reject) => {
 		const req = http.request(options, res => {
@@ -104,6 +117,12 @@ function loginLgn(res) {
 		}
 	});
 }
+
+if (!usrname || !pwd) {
+	console.log('用户名及密码不能为空');
+	return ;
+}
+
 
 loginLab()
 	.then(loginLgn)

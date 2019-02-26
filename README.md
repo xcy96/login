@@ -9,3 +9,10 @@ git clone https://github.com/xcy96/login.git && cd login
 node loginLab
 ```
 启动脚本，有成功字样表示登录成功
+
+2019/2/26
+
+增加命令行参数启动
+```
+node loginLab.js -u用户名 -p密码
+```
