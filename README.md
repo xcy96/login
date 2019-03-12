@@ -16,3 +16,7 @@ node loginLab
 ```
 node loginLab.js -u用户名 -p密码
 ```
+
+#2019/3/12 更新
+直接将login1.exe文件打开,按照提示输入用户名密码即可
+
